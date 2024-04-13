@@ -13,7 +13,7 @@ class Item:
             setattr(self, key, value)
 
     def __str__(self):
-        return f'{self.name}: {self.long_description}. It is worth {self.value} gold. You can use it to {self.use}.'
+        return f' - {self.name}: {self.long_description} It is worth {self.value} gold. You can use it with: "{self.use}".'
 
     def __repr__(self):
         return f'Item({self.id}, {self.name}, {self.description}, {self.value}, {self.long_description}, {self.use})'

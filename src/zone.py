@@ -17,5 +17,5 @@ class Zone:
     def remove_item(self, item):
         self.items.remove(item)
 
-    def look(self):
+    def get_long_description(self):
         return self.long_description

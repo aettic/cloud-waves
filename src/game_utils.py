@@ -2,6 +2,7 @@ import json
 from player import Player
 from items.item import Item
 from zone import Zone
+import inspect
 
 
 # introductory functions
@@ -44,6 +45,10 @@ def print_instructions(player):
 def goodbye(player):
     print(f"Goodbye, {player.name}!")
     print(f"Your score was {player.score}.")
+
+
+def quit_game():
+    return False
 
 
 # data loading functions
@@ -98,51 +103,33 @@ def load_zones(items):
 # TODO: define actions as their own functions
 
 
-
-
 def process_command(player, action):
-    action = action.lower()
+    action = action.lower().split()
 
-    # movement
-    if action == "move" or action == "m":
-        direction = input("Which direction would you like to move? ")
-        player.move(direction)
-    elif action == "west" or action == "w":
-        player.move("west")
-    elif action == "east" or action == "e":
-        player.move("east")
-    elif action == "north" or action == "n":
-        player.move("north")
-    elif action == "south" or action == "s":
-        player.move("south")
+    commands = {
+        player.move: ["move", "m", "go"],
+        player.look: ["look", "l", "examine"],
+        player.take_item: ["take", "t", "grab", "get"],
+        player.use_item_from_inventory: ["use", "u", "activate"],
+        print_help: ["help", "?"],
+        quit_game: ["quit", "q", "exit"],
+        player.open_inventory: ["inventory", "i"]
+    }
 
-    # interacting with the environment
-    elif action == "look" or action == 'l' or action == 'examine' or action == 'look around':
-        print(player.current_zone.look())
-        player.looked = True
-    elif action == "take" or action == 't' or action == 'pick up' or action == 'grab' or action == 'get':
-        if player.current_zone.items:
-            item_name = input("What would you like to take? ")
-            for item in player.current_zone.items:
-                if item.name.lower() == item_name.lower():
-                    player.take_item(item)
-                    break
+    command_found = False
+
+    for command, options in commands.items():
+        if action[0] in options:
+            if len(action) > 1 and action[0] in ["move", "m", "go", "take", "t", "grab", "get", "use", "u"]:
+                command(action[1])
             else:
-                print("That item is not here.")
-    elif action == "use" or action == 'u':
-        item_name = input("What would you like to use? ")
-        player.use_item_from_inventory(item_name)
+                command()
+            command_found = True
+            break
+
+    if not command_found:
+        print("I do not understand that command.")
 
     # TODO: add ability to search items like chests
-
-    # other actions
-    elif action == "help" or action == '?':
-        print_help()
-    elif action == "quit" or action == 'q' or action == 'exit':
-        return False
-
-    # catch
-    else:
-        print("I don't understand that command.")
 
     return True
