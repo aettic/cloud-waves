@@ -5,7 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e1aa2491-0e9f-49b1-b04d-c0cdbba8cf9d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/items.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/items.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/game_utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/items/item.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/items/item.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/player.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/player.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +57,7 @@
     "Python.zone.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
-    "settings.editor.selected.configurable": "editor.preferences.fonts.default"
+    "settings.editor.selected.configurable": "preferences.editor"
   }
 }]]></component>
   <component name="RecentsManager">

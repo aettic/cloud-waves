@@ -1,0 +1,27 @@
+
+    CABIN LAYOUT
+    I = Item
+
+    Item Legend
+  -------------------------------
+    Sitting Room:   1 - Book
+    Kitchen:        2 - Matches
+
+
+    FLOOR 1
+    .______________. .______________.
+    | I            | |              |
+    |              | |              |
+    |    Sitting   ---    Dining    |
+    |     Room     ---     Room     |
+    |              | |              |
+    |_____|  |_____| |_____|  |_____|
+    ._____|  |_____. ._____|  |_____.
+    |              | | I            |
+    |              | |              |
+    |   Entrance   ---   Kitchen    |
+    |     Hall     ---              |
+    |              | |              |
+    |______XX______| |______________|
+
+

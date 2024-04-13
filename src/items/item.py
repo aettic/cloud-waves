@@ -20,7 +20,8 @@ class Item:
 
     def use_item(self):
         # Check if the item has an attribute that matches its "use" value
-        if hasattr(self, self.use):
-            print(getattr(self, self.use))
+        use_command = self.use[0]
+        if hasattr(self, use_command):
+            print(getattr(self, use_command))
         else:
-            print(self.use)
+            print(use_command)

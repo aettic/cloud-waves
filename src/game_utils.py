@@ -78,24 +78,25 @@ def load_items():
 def load_zones(items):
     with open("data/zones.json") as f:
         zone_data = json.load(f)
-        retrieved_zones = {}
-        for zone in zone_data:
-            retrieved_zones[zone["id"]] = Zone(
-                zone["id"],
-                zone["name"],
-                zone["description"],
-                zone["long_description"]
-            )
 
-        for zone in zone_data:
-            for direction, neighbor_id in zone["neighbors"].items():
-                retrieved_zones[zone["id"]].add_neighbor(
-                    retrieved_zones[neighbor_id],
-                    direction
-                )
-            if "items" in zone:
-                for item_id in zone["items"]:
-                    retrieved_zones[zone["id"]].add_item(items[item_id])
+    retrieved_zones = {}
+    for zone in zone_data:
+        retrieved_zones[zone["id"]] = Zone(
+            zone["id"],
+            zone["name"],
+            zone["description"],
+            zone["long_description"]
+        )
+
+    for zone in zone_data:
+        for direction, neighbor_id in zone["neighbors"].items():
+            retrieved_zones[zone["id"]].add_neighbor(
+                retrieved_zones[neighbor_id],
+                direction
+            )
+        if "items" in zone:
+            for item_id in zone["items"]:
+                retrieved_zones[zone["id"]].add_item(items[item_id])
 
     return retrieved_zones
 
@@ -123,7 +124,9 @@ def process_command(player, action):
             if len(action) > 1 and action[0] in ["move", "m", "go", "take", "t", "grab", "get", "use", "u"]:
                 command(action[1])
             else:
-                command()
+                process = command()
+                if not process:
+                    return False
             command_found = True
             break
 

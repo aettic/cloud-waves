@@ -3,7 +3,7 @@
     "id": 1,
     "name": "Entrance Hall",
     "description": "A large room with a portrait on the wall",
-    "long_description": "You are standing in the entrance hall of a large cabin. There is a portrait on the wall which depicts a noble looking elderly man. The grim expression on his face spells trouble. There are doors to the north and east.",
+    "long_description": "You are standing in the entrance hall of a large cabin. There is a portrait on the wall which depicts a noble looking elderly man. The grim expression on his face spells trouble. There are doors to the north and east. The entrance to the cabin is to the south, but you have no reason to leave.",
     "neighbors": {
       "north": 2,
       "east": 3

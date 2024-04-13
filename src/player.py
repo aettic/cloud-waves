@@ -13,6 +13,7 @@ class Player:
 
     def equip(self, weapon):
         self.hand.append(weapon.equip())
+        return True
 
     def move(self, direction=None):
         if direction is None:
@@ -21,10 +22,12 @@ class Player:
             self.current_zone = self.current_zone.neighbors[direction]
         else:
             print("You cannot move in that direction.")
+        return True
 
     def look(self):
         print(self.current_zone.get_long_description())
         self.looked = True
+        return True
 
     def award_points(self, points):
         self.score += points
@@ -45,6 +48,7 @@ class Player:
                     print("That item is not here.")
         else:
             print(f"There is no {item_name} here.")
+        return True
 
     def use_item_from_inventory(self, item_name=None):
         if item_name is None:
@@ -52,9 +56,15 @@ class Player:
         for item in self.inventory:
             if item.name.lower() == item_name.lower():
                 item.use_item()
-                self.inventory.remove(item)
-                return
+                if item.is_expendable:
+                    item.quantity -= 1
+                    if item.quantity < 1:
+                        self.inventory.remove(item)
+                        # replace with an item-specific "expend" string for when quantity hits 0
+                        print(f"You have used up the {item.name}.")
+                return True
         print("You do not have that item.")
+        return True
 
 
     def open_inventory(self):
@@ -64,3 +74,4 @@ class Player:
             print("You have the following items in your inventory:")
             for item in self.inventory:
                 print(item)
+        return True

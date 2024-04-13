@@ -33,12 +33,12 @@ characters, etc. in a fantasy setting. I'll include information on the setting a
 - [ ] Add puzzles
 - [ ] Add combat
 - [ ] Add a save system
-- [ ] Add a menu system
+- [ ] Add an options system
 - [ ] Add a settings system
-- [ ] Add an inventory system
-- [ ] Add environmental effects such as lighting
+- [x] Add an inventory system
+- [ ] Add environmental systems (described below)
 - [ ] Add a magic system
-- [ ] Implement a language parser
+- [x] Implement a language parser
 
 ### Stretch Goals
 
@@ -61,18 +61,30 @@ pickup and use items, talk to characters, and solve puzzles. The game will also 
 save system.
 
 The game uses a basic language parser to interpret the player's input. The player can type commands such as "move north"
-to traverse the various zones.
+to traverse the various zones. Zones can contain items, which the user may interact with.
 
 ### List of Possible Actions
 - move (m) - move in a specified direction to an adjacent zone
-- look (l) / examine - examine the current zone
-- take (t) / pickup - take an item that is in the current zone
+- look (l) - examine the current zone
+- take (t) - take an item that is in the current zone
 - inventory (i) - view the player's inventory, which provides options for interacting with items
 - stats - view the player's stats
+- help (?) - view a list of possible commands
 - save - save the game
 - load - load a saved game
 - quit (q) - quit the game
-- help (?) - view a list of possible commands
+
+With these basic mechanics, many game worlds can be created, as long as they fit into the basic components of the game 
+as described above. However, users can add or change functionality as well. The plan is to include "laws of nature" for 
+the game world which will define how the world works, and should be relatively common across all game worlds. 
+
+### Mechanics Systems (Laws of Nature)
+- [ ] Time (Day / Night)
+- [ ] Temperature
+- [ ] Light
+- [ ] Weather
+- [ ] Fire and Water
+- [ ] Magical effects
 
 ## License
 
