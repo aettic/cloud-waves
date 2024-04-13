@@ -1,0 +1,45 @@
+[
+  {
+    "id": 1,
+    "name": "Entrance",
+    "description": "A large room with a portrait on the wall",
+    "long_description": "You are standing in the entrance of a large cabin. There is a portrait on the wall which depicts a noble looking elderly man The grim expression on his face spells trouble. There are doors to the north and east.",
+    "neighbors": {
+      "north": 2,
+      "east": 3
+    }
+  },
+  {
+    "id": 2,
+    "name": "Sitting Room",
+    "description": "A room with comfortable chairs around a fireplace",
+    "long_description": "You are in a sitting room. There are comfortable chairs around a fireplace. There are doors to the south and east.",
+    "neighbors": {
+      "south": 1,
+      "east": 4
+    },
+    "items": [
+      1
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Kitchen",
+    "description": "A room with a large stove and pots and pans",
+    "long_description": "You are in the kitchen. There is a large wood-burning stove with pots and pans hanging above it. There are doors to the west and south.",
+    "neighbors": {
+      "west": 1,
+      "north": 4
+    }
+  },
+  {
+    "id": 4,
+    "name": "Dining Room",
+    "description": "A room with a long table and chairs",
+    "long_description": "You are in the dining room. There is a long oak table with ornate chairs around it. There are doors to the north and west.",
+    "neighbors": {
+      "west": 2,
+      "south": 3
+    }
+  }
+]

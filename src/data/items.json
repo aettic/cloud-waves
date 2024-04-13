@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "name": "Book",
+    "description": "A leather-bound journal",
+    "value": 1,
+    "long_description": "A dark red leather journal. It's filled with writing in a strange language.",
+    "use": "read"
+  },
+  {
+    "id": 2,
+    "name": "Matches",
+    "description": "A box of matches",
+    "value": 1,
+    "long_description": "A box of matches. You can use these to light fires.",
+    "use": "light fire"
+  }
+]
