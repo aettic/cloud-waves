@@ -1,3 +1,4 @@
+import game_utils
 class Player:
     def __init__(self, name):
         self.name = name
@@ -21,11 +22,11 @@ class Player:
         if direction in self.current_zone.neighbors:
             self.current_zone = self.current_zone.neighbors[direction]
         else:
-            print("You cannot move in that direction.")
+            game_utils.print_handler("You cannot move in that direction.")
         return True
 
     def look(self):
-        print(self.current_zone.get_long_description())
+        game_utils.print_handler(self.current_zone.get_long_description())
         self.looked = True
         return True
 
@@ -42,12 +43,12 @@ class Player:
                     self.inventory.append(item)
                     self.current_zone.remove_item(item)
                     self.award_points(item.value)
-                    print(f"You took the {item.name}.")
+                    game_utils.print_handler(f"You took the {item.name}.")
                     break
                 else:
-                    print("That item is not here.")
+                    game_utils.print_handler("That item is not here.")
         else:
-            print(f"There is no {item_name} here.")
+            game_utils.print_handler(f"There is no {item_name} here.")
         return True
 
     def use_item_from_inventory(self, item_name=None):
@@ -55,17 +56,16 @@ class Player:
             item_name = input("Which item would you like to use? ")
         for item in self.inventory:
             if item.name.lower() == item_name.lower():
-                item.use_item()
+                game_utils.print_handler(item.use_item())
                 if item.is_expendable:
                     item.quantity -= 1
                     if item.quantity < 1:
                         self.inventory.remove(item)
                         # replace with an item-specific "expend" string for when quantity hits 0
-                        print(f"You have used up the {item.name}.")
+                        game_utils.print_handler(f"You have used up the {item.name}.")
                 return True
-        print("You do not have that item.")
+        game_utils.print_handler("You do not have that item.")
         return True
-
 
     def open_inventory(self):
         if len(self.inventory) < 1:

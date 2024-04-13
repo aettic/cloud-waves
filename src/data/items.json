@@ -9,7 +9,9 @@
     "read": "You crack open the book and flip through the pages. The writing is in a strange language you don't understand, but the arcane sigils and elaborate diagrams are exhilarating. You feel a strange sense of power just holding the book.",
     "mana_increase": 2,
     "quantity": 1,
-    "is_expendable": true
+    "is_expendable": true,
+    "can_take": true,
+    "type": "consumable"
   },
   {
     "id": 2,
@@ -20,6 +22,74 @@
     "use": ["light fire"],
     "light fire": "You strike a match and light a fire. The flames dance and crackle, casting a warm glow over the room.",
     "quantity": 5,
-    "is_expendable": true
-  }
+    "is_expendable": true,
+    "can_take": true,
+    "type": "consumable"
+  },
+  {
+    "id": 3,
+    "name": "Potion",
+    "description": "A small vial of liquid",
+    "value": 1,
+    "long_description": "A small vial of liquid. It's a deep blue color.",
+    "use": ["drink", "heal"],
+    "drink": "You uncork the vial and drink the liquid. It tastes sweet and refreshing.",
+    "heal": 5,
+    "quantity": 1,
+    "is_expendable": true,
+    "can_take": true,
+    "type": "consumable"
+  },
+  {
+    "id": 4,
+    "name": "Key",
+    "description": "A small brass key",
+    "value": 1,
+    "long_description": "A small brass key. It's old and tarnished, but still looks sturdy.",
+    "use": ["unlock"],
+    "unlock": "You insert the key into the lock and turn it. With a satisfying click, the door swings open.",
+    "quantity": 1,
+    "is_expendable": true,
+    "can_take": true,
+    "type": "key"
+  },
+  {
+    "id": 5,
+    "name": "Map",
+    "description": "A tattered map",
+    "value": 1,
+    "long_description": "A tattered map. It's old and faded, but you can still make out some of the landmarks.",
+    "use": ["read"],
+    "read": "You study the map, tracing the faded lines and symbols with your finger. It looks like it might be a map of the surrounding area, but it's hard to tell for sure.",
+    "quantity": 1,
+    "is_expendable": false,
+    "can_take": true,
+    "type": "object"
+  },
+  {
+    "id": 6,
+    "name": "Sword",
+    "description": "A rusty sword",
+    "value": 1,
+    "long_description": "A rusty sword. It's seen better days, but it still looks sharp enough to do some damage.",
+    "use": ["attack"],
+    "attack": "You swing the sword at your enemy, slicing through the air with a satisfying whoosh.",
+    "quantity": 1,
+    "is_expendable": false,
+    "can_take": true,
+    "type": "weapon"
+  },
+  {
+    "id": 7,
+    "name": "Chest",
+    "description": "A locked chest",
+    "value": 1,
+    "long_description": "A locked chest. It's made of sturdy wood and has a heavy iron lock.",
+    "use": ["unlock"],
+    "unlock": "You insert the key into the lock and turn it. With a satisfying click, the chest swings open.",
+    "locked": true,
+    "is_expendable": false,
+    "can_take": false,
+    "type": "container"
+    }
 ]

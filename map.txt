@@ -1,18 +1,33 @@
 
-    CABIN LAYOUT
-    I = Item
+    MAP - Small Cabin
 
-    Item Legend
+    Icon Legend
+  --------------------------------------------------
+    I       Item                    (top left)
+    F#      Staircase to Floor      (bottom left)
+    C       Character / Creature    (top right)
+
+    Items
   -------------------------------
-    Sitting Room:   1 - Book
-    Kitchen:        2 - Matches
+    Library:   1 - Book
+    Kitchen:   2 - Matches
+    Study:     4 - Key
+
 
 
     FLOOR 1
-    .______________. .______________.
-    | I            | |              |
+
+    .______________.
+    | I            |
+    |              |
+    |   Library    |
+    |              |
+    |              |
+    |_____|  |_____|
+    ._____|  |_____. .______________.
     |              | |              |
-    |    Sitting   ---    Dining    |
+    |              | |              |
+    |   Sitting    ---    Dining    |
     |     Room     ---     Room     |
     |              | |              |
     |_____|  |_____| |_____|  |_____|
@@ -21,7 +36,17 @@
     |              | |              |
     |   Entrance   ---   Kitchen    |
     |     Hall     ---              |
-    |              | |              |
+    | F2           | |              |
     |______XX______| |______________|
 
 
+
+    FLOOR 2
+
+    .______________. .______________. .______________.
+    |              | |              | | I            |
+    |              | |              | |              |
+    |   Bedroom    ---   Hallway    ---    Study     |
+    |              ---              ---              |
+    |              | | F1           | |              |
+    |______________| |______________| |______________|

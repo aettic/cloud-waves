@@ -2,8 +2,7 @@ import json
 from player import Player
 from items.item import Item
 from zone import Zone
-import inspect
-
+import textwrap
 
 # introductory functions
 
@@ -26,20 +25,28 @@ def print_help():
     print("  help (?) - Print this list of commands.")
 
 
+def print_handler(string):
+    print(textwrap.fill(string, width=100))
+    return True
+
+
 def print_instructions(player):
+    print_handler("\n")
     if player.current_zone not in player.visited_zones:
         player.visited_zones.add(player.current_zone)
-        print(f"\nYou are in the {player.current_zone.name}, {player.current_zone.description}.")
+        print_handler(f"You are in the {player.current_zone.name}, {player.current_zone.description}.")
     else:
-        print(f"\nYou are in the {player.current_zone.name}.")
+        print_handler(f"You are in the {player.current_zone.name}.")
 
     if player.looked:
         if player.current_zone.items:
-            print("You see the following items:")
+            print_handler("You see the following items:")
             for item in player.current_zone.items:
-                print(f"  {item.name}")
+                print_handler(f"  {item.name}")
 
     player.looked = False
+
+
 
 
 def goodbye(player):
@@ -99,9 +106,6 @@ def load_zones(items):
                 retrieved_zones[zone["id"]].add_item(items[item_id])
 
     return retrieved_zones
-
-
-# TODO: define actions as their own functions
 
 
 def process_command(player, action):

@@ -13,7 +13,7 @@ class Item:
             setattr(self, key, value)
 
     def __str__(self):
-        return f' - {self.name}: {self.long_description} It is worth {self.value} gold. You can use it with: "{self.use}".'
+        return f' - {self.name}: {self.long_description} It is worth {self.value} gold.'
 
     def __repr__(self):
         return f'Item({self.id}, {self.name}, {self.description}, {self.value}, {self.long_description}, {self.use})'
@@ -22,6 +22,6 @@ class Item:
         # Check if the item has an attribute that matches its "use" value
         use_command = self.use[0]
         if hasattr(self, use_command):
-            print(getattr(self, use_command))
+            return getattr(self, use_command)
         else:
-            print(use_command)
+            return use_command
