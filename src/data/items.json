@@ -5,7 +5,8 @@
     "description": "A leather-bound journal",
     "value": 1,
     "long_description": "A dark red leather journal. It's filled with writing in a strange language.",
-    "use": "read"
+    "use": "read",
+    "read": "You crack open the book and flip through the pages. The writing is in a strange language you don't understand, but the arcane sigils and elaborate diagrams are exhilarating. You feel a strange sense of power just holding the book."
   },
   {
     "id": 2,
@@ -13,6 +14,7 @@
     "description": "A box of matches",
     "value": 1,
     "long_description": "A box of matches. You can use these to light fires.",
-    "use": "light fire"
+    "use": "light fire",
+    "light fire": "You strike a match and light a fire. The flames dance and crackle, casting a warm glow over the room."
   }
 ]

@@ -28,3 +28,11 @@ class Player:
         self.current_zone.remove_item(item)
         self.award_points(item.value)
         print(f"You took the {item.name}.")
+
+    def use_item_from_inventory(self, item_name):
+        for item in self.inventory:
+            if item.name.lower() == item_name.lower():
+                item.use_item()
+                self.inventory.remove(item)
+                return
+        print("You do not have that item.")

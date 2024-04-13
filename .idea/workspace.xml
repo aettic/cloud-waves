@@ -5,26 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e1aa2491-0e9f-49b1-b04d-c0cdbba8cf9d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/cloud-waves.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/entities.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/items.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/weapons.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/zones.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/items/armor.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/items/equipment.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/items/item.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/items/weapon.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/npc.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/player.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/zone.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/game_utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/items.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/items.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/zones.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/zones.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/items/item.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/items/item.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/player.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/player.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +28,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "aettic"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/aettic/cloud-waves.git",
+    "accountId": "bb83333b-c144-470f-9a7c-3402c607976e"
+  }
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
 }</component>
@@ -57,6 +56,7 @@
     "Python.Play.executor": "Run",
     "Python.main.executor": "Run",
     "Python.player.executor": "Run",
+    "Python.zone.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "settings.editor.selected.configurable": "preferences.lookFeel"
@@ -64,6 +64,8 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/src/items" />
     </key>
   </component>
@@ -78,11 +80,11 @@
       </envs>
       <option name="SDK_HOME" value="" />
       <option name="SDK_NAME" value="Python 3.9 (cloud-waves)" />
-      <option name="WORKING_DIRECTORY" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="" />
+      <option name="SCRIPT_NAME" value="main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
