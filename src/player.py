@@ -40,10 +40,13 @@ class Player:
 
             for item in self.current_zone.items:
                 if item.name.lower() == item_name.lower():
-                    self.inventory.append(item)
-                    self.current_zone.remove_item(item)
-                    self.award_points(item.value)
-                    game_utils.print_handler(f"You took the {item.name}.")
+                    if item.can_take:
+                        self.inventory.append(item)
+                        self.current_zone.remove_item(item)
+                        self.award_points(item.value)
+                        game_utils.print_handler(f"You took the {item.name}.")
+                    else:
+                        game_utils.print_handler("You cannot take that item.")
                     break
                 else:
                     game_utils.print_handler("That item is not here.")
@@ -69,9 +72,16 @@ class Player:
 
     def open_inventory(self):
         if len(self.inventory) < 1:
-            print("Your inventory is empty.")
+            game_utils.print_handler("Your inventory is empty.")
         else:
-            print("You have the following items in your inventory:")
+            game_utils.print_handler("You have the following items in your inventory:")
             for item in self.inventory:
                 print(item)
+        return True
+
+    def get_stats(self):
+        game_utils.print_handler("Player Stats:")
+        game_utils.print_handler(f"  Health: {self.health}")
+        game_utils.print_handler(f"  Mana: {self.mana}")
+        game_utils.print_handler(f"  Score: {self.score}")
         return True

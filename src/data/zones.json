@@ -14,17 +14,18 @@
     "id": 2,
     "name": "Sitting Room",
     "description": "A room with comfortable chairs around a fireplace",
-    "long_description": "Comfortable-looking chairs rest facing a fireplace in this sitting room. A large window looks out onto the forest behind the cabin. There are doors to the south and east.",
+    "long_description": "Comfortable-looking chairs rest facing a fireplace in this sitting room. A large window looks out onto the forest behind the cabin. There are doors to the north, south and east.",
     "neighbors": {
       "south": 1,
-      "east": 4
+      "east": 4,
+      "north": 8
     }
   },
   {
     "id": 3,
     "name": "Kitchen",
     "description": "A room with a large stove and pots and pans",
-    "long_description": "The center of this kitchen features a large wood-burning stove, pots and pans hang securely above it. Counter tops and cabinets line the walls, and a pantry can be seen to one side. There are doors to the west and north.",
+    "long_description": "The center of this kitchen features a large wood-burning stove, pots and pans hang securely above it. Counter tops and cabinets line the walls, and a pantry can be seen to one side. A large window looks out onto the lake to the east. There are doors to the west and north.",
     "neighbors": {
       "west": 1,
       "north": 4
@@ -37,7 +38,7 @@
     "id": 4,
     "name": "Dining Room",
     "description": "A room with a long table and chairs",
-    "long_description": "A long oak table stretches across the middle of this dining room. sturdy-looking chairs line its sides with an larger ornate chair at the far head. There are doors to the south and west.",
+    "long_description": "A long oak table stretches across the middle of this dining room. sturdy-looking chairs line its sides with a larger ornate chair at the far head. There are doors to the south and west.",
     "neighbors": {
       "west": 2,
       "south": 3

@@ -4,6 +4,7 @@ from items.item import Item
 from zone import Zone
 import textwrap
 
+
 # introductory functions
 
 def welcome():
@@ -12,17 +13,21 @@ def welcome():
 
 
 def story():
-    print("You have entered a well-built cabin, in the hopes of finding the ancient amulet.")
+    print_handler("You have entered a well-built cabin, in the hopes of finding the ancient amulet.")
 
 
 # administrative functions
 
 def print_help():
-    print("Commands:")
-    print("  move (m) - Move to a different zone.")
-    print("  look (l) - Look around.")
-    print("  quit (q) - Quit the game.")
-    print("  help (?) - Print this list of commands.")
+    print_handler("Commands:")
+    print_handler("  move (m) - Move to a different zone.")
+    print_handler("  look (l) - Look around.")
+    print_handler("  take (t) - Take an item.")
+    print_handler("  use (u) - Use an item from your inventory.")
+    print_handler("  inventory (i) - Open your inventory.")
+    print_handler("  stats - Print your stats.")
+    print_handler("  help (?) - Print this list of commands.")
+    print_handler("  quit (q) - Quit the game.")
 
 
 def print_handler(string):
@@ -47,11 +52,9 @@ def print_instructions(player):
     player.looked = False
 
 
-
-
 def goodbye(player):
-    print(f"Goodbye, {player.name}!")
-    print(f"Your score was {player.score}.")
+    print_handler(f"Goodbye, {player.name}!")
+    print_handler(f"Your score was {player.score}.")
 
 
 def quit_game():
@@ -118,7 +121,8 @@ def process_command(player, action):
         player.use_item_from_inventory: ["use", "u", "activate"],
         print_help: ["help", "?"],
         quit_game: ["quit", "q", "exit"],
-        player.open_inventory: ["inventory", "i"]
+        player.open_inventory: ["inventory", "i"],
+        player.get_stats: ["stats"]
     }
 
     command_found = False
@@ -135,7 +139,7 @@ def process_command(player, action):
             break
 
     if not command_found:
-        print("I do not understand that command.")
+        print_handler("I do not understand that command.")
 
     # TODO: add ability to search items like chests
 
