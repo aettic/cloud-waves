@@ -111,6 +111,8 @@ def load_zones(items):
     return retrieved_zones
 
 
+# processing functions
+
 def process_command(player, action):
     action = action.lower().split()
 

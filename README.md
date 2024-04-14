@@ -26,7 +26,7 @@ characters, etc. in a fantasy setting. I'll include information on the setting a
 
 ### Must Haves
 
-- [ ] Write a story of some kind
+- [x] Write a story of some kind
 - [ ] Add more locations
 - [ ] Add more items
 - [ ] Add characters
