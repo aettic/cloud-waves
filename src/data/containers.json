@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "name": "Bookshelf",
+    "description": "A simple bookshelf",
+    "items": [1],
+    "is_open": true,
+    "is_locked": false,
+    "is_lockable": false
+  },
+  {
+    "id": 2,
+    "name": "Chest",
+    "description": "A simple chest",
+    "items": [2],
+    "is_open": false,
+    "is_locked": true,
+    "is_lockable": true
+  },
+  {
+    "id": 3,
+    "name": "Desk",
+    "description": "A simple desk",
+    "items": [3],
+    "is_open": false,
+    "is_locked": true,
+    "is_lockable": true
+  },
+  {
+    "id": 4,
+    "name": "Cabinet",
+    "description": "A simple cabinet",
+    "items": [4],
+    "is_open": false,
+    "is_locked": false,
+    "is_lockable": false
+  },
+  {
+    "id": 5,
+    "name": "Locked Box",
+    "description": "A simple safe",
+    "items": [5],
+    "is_open": false,
+    "is_locked": true,
+    "is_lockable": true
+  }
+]

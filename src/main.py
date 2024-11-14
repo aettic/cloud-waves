@@ -8,7 +8,8 @@ if __name__ == "__main__":
 
     # load content
     items = game_utils.load_items()
-    zones = game_utils.load_zones(items)
+    containers = game_utils.load_containers(items)
+    zones = game_utils.load_zones(items, containers)
 
     # set starting zone
     player.current_zone = zones[1]

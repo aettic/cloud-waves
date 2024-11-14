@@ -1,6 +1,7 @@
 import json
 from player import Player
 from items.item import Item
+from items.container import Container
 from zone import Zone
 import textwrap
 
@@ -23,11 +24,13 @@ def print_help():
     print_handler("  move (m) - Move to a different zone.")
     print_handler("  look (l) - Look around.")
     print_handler("  take (t) - Take an item.")
+    print_handler("  open (o) - Open a container.")
     print_handler("  use (u) - Use an item from your inventory.")
     print_handler("  inventory (i) - Open your inventory.")
     print_handler("  stats - Print your stats.")
     print_handler("  help (?) - Print this list of commands.")
     print_handler("  quit (q) - Quit the game.")
+    return True
 
 
 def print_handler(string):
@@ -48,6 +51,10 @@ def print_instructions(player):
             print_handler("You see the following items:")
             for item in player.current_zone.items:
                 print_handler(f"  {item.name}")
+        if player.current_zone.containers:
+            print_handler("You see the following containers:")
+            for container in player.current_zone.containers:
+                print_handler(f"  {container.name}")
 
     player.looked = False
 
@@ -85,7 +92,30 @@ def load_items():
     return retrieved_items
 
 
-def load_zones(items):
+def load_containers(items):
+    with open("data/containers.json") as f:
+        container_data = json.load(f)
+        retrieved_containers = {}
+        for container in container_data:
+
+            new_container = Container(
+                container["id"],
+                container["name"],
+                container["description"],
+                container["is_open"],
+                container["is_locked"],
+                container["is_lockable"]
+            )
+
+            for item in container["items"]:
+                new_container.add_item(items[item])
+
+            retrieved_containers[container["id"]] = new_container
+
+    return retrieved_containers
+
+
+def load_zones(items, containers):
     with open("data/zones.json") as f:
         zone_data = json.load(f)
 
@@ -108,6 +138,10 @@ def load_zones(items):
             for item_id in zone["items"]:
                 retrieved_zones[zone["id"]].add_item(items[item_id])
 
+        if "containers" in zone:
+            for container_id in zone["containers"]:
+                retrieved_zones[zone["id"]].add_container(containers[container_id])
+
     return retrieved_zones
 
 
@@ -116,11 +150,16 @@ def load_zones(items):
 def process_command(player, action):
     action = action.lower().split()
 
-    commands = {
-        player.move: ["move", "m", "go"],
-        player.look: ["look", "l", "examine"],
+    commands_with_args = {
+        player.move: ["move", "m", "go", "walk", "run"],
         player.take_item: ["take", "t", "grab", "get"],
+        player.open_container: ["open", "o"],
+        player.search_container: ["search", "s"],
         player.use_item_from_inventory: ["use", "u", "activate"],
+    }
+
+    commands_without_args = {
+        player.look: ["look", "l"],
         print_help: ["help", "?"],
         quit_game: ["quit", "q", "exit"],
         player.open_inventory: ["inventory", "i"],
@@ -129,16 +168,20 @@ def process_command(player, action):
 
     command_found = False
 
-    for command, options in commands.items():
-        if action[0] in options:
-            if len(action) > 1 and action[0] in ["move", "m", "go", "take", "t", "grab", "get", "use", "u"]:
+    if len(action) > 1:
+        for command, options in commands_with_args.items():
+            if action[0] in options:
                 command(action[1])
-            else:
+                command_found = True
+                break
+    else:
+        for command, options in commands_without_args.items():
+            if action[0] in options:
                 process = command()
                 if not process:
                     return False
-            command_found = True
-            break
+                command_found = True
+                break
 
     if not command_found:
         print_handler("I do not understand that command.")

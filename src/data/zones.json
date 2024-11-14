@@ -3,7 +3,7 @@
     "id": 1,
     "name": "Entrance Hall",
     "description": "A large room with a portrait on the wall",
-    "long_description": "You are standing in the entrance hall of a small cabin. There is a portrait on the wall which depicts a noble looking elderly man. The grim expression on his face spells trouble. There are doors to the north and east. A staircase leads to the upper floor. The entrance to the cabin is to the south, but you have no reason to leave.",
+    "long_description": "You are standing in the entrance hall of a small cabin. There is a portrait on the wall which depicts a noble looking elderly man. The grim expression on his face spells trouble. There are doors to the north and east. A staircase leads to the upper floor. The entrance to the cabin is to the south, but you have no reason to leave: you must find the amulet.",
     "neighbors": {
       "upstairs": 5,
       "north": 2,
@@ -19,7 +19,10 @@
       "south": 1,
       "east": 4,
       "north": 8
-    }
+    },
+    "containers": [
+      1
+    ]
   },
   {
     "id": 3,
@@ -53,10 +56,7 @@
       "downstairs": 1,
       "east": 6,
       "west": 7
-    },
-    "items": [
-      4
-    ]
+    }
   },
   {
     "id": 6,
@@ -65,7 +65,10 @@
     "long_description": "The study is a quiet retreat, dominated by a large oak desk piled high with papers and books. A leather armchair sits nearby, its well-worn cushions inviting you to sit and contemplate. A small bookshelf appears to contain some personal journals. A door to the west leads back to the hallway.",
     "neighbors": {
       "west": 5
-    }
+    },
+    "items": [
+      1
+    ]
   },
   {
     "id": 7,
@@ -74,7 +77,10 @@
     "long_description": "A small bed sits squarely against the far wall of this bedroom. A nightstand sits beside it, and a wardrobe stands against the wall. A door to the east leads back to the hallway.",
     "neighbors": {
       "east": 5
-    }
+    },
+    "items": [
+      4
+    ]
   },
   {
     "id": 8,
@@ -85,7 +91,29 @@
       "south": 2
     },
     "items": [
-      1
+      8
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Cellar",
+    "description": "A wine cellar underneath the cabin",
+    "long_description": "The cellar is dark and musty, with a few cobwebs in the corners. Shelves line the walls, filled with bottles of wine and other supplies. A staircase to the north leads back to the kitchen.",
+    "neighbors": {
+      "upstairs": 8,
+      "west": 10
+    }
+  },
+  {
+    "id": 10,
+    "name": "Secret Room",
+    "description": "A hidden room behind a wine rack",
+    "long_description": "This room is hidden behind a wine rack in the cellar. It is small and cramped, with a single stone table in the center. A small box sits on top of it. A door to the east leads back to the cellar.",
+    "neighbors": {
+      "east": 9
+    },
+    "containers": [
+      5
     ]
   }
 ]

@@ -1,4 +1,6 @@
 import game_utils
+
+
 class Player:
     def __init__(self, name):
         self.name = name
@@ -34,22 +36,38 @@ class Player:
         self.score += points
 
     def take_item(self, item_name=None):
-        if self.current_zone.items:
+        if self.current_zone.items or self.current_zone.containers:
+            item_taken = False
             if item_name is None:
                 item_name = input("What would you like to take? ")
 
             for item in self.current_zone.items:
                 if item.name.lower() == item_name.lower():
-                    if item.can_take:
+                    if item.can_take and not item_taken:
                         self.inventory.append(item)
                         self.current_zone.remove_item(item)
                         self.award_points(item.value)
                         game_utils.print_handler(f"You took the {item.name}.")
+                        item_taken = True
                     else:
                         game_utils.print_handler("You cannot take that item.")
                     break
                 else:
                     game_utils.print_handler("That item is not here.")
+            for container in self.current_zone.containers:
+                for item in container.items:
+                    if item.name.lower() == item_name.lower():
+                        if item.can_take and not item_taken:
+                            self.inventory.append(item)
+                            container.remove_item(item)
+                            self.award_points(item.value)
+                            game_utils.print_handler(f"You took the {item.name}.")
+                            item_taken = True
+                        else:
+                            game_utils.print_handler("You cannot take that item.")
+                        break
+                    else:
+                        game_utils.print_handler("That item is not here.")
         else:
             game_utils.print_handler(f"There is no {item_name} here.")
         return True
@@ -69,6 +87,32 @@ class Player:
                 return True
         game_utils.print_handler("You do not have that item.")
         return True
+
+    def open_container(self, container_name=None):
+        if container_name is None:
+            container_name = input("What would you like to open? ")
+        for container in self.current_zone.containers:
+            if container.name.lower() == container_name.lower():
+                game_utils.print_handler(container.open())
+                return True
+        game_utils.print_handler("You cannot open that.")
+        return True
+
+    def search_container(self, container_name=None):
+        if container_name is None:
+            container_name = input("What would you like to search? ")
+        for container in self.current_zone.containers:
+            if container.name.lower() == container_name.lower():
+                if container.is_open:
+                    if container.items:
+                        game_utils.print_handler(f"You find the following items in the {container.name}:")
+                        for item in container.items:
+                            game_utils.print_handler(f"  {item.name}")
+                    else:
+                        game_utils.print_handler(f"There is nothing in the {container.name}.")
+                else:
+                    game_utils.print_handler(f"The {container.name} is closed.")
+                return True
 
     def open_inventory(self):
         if len(self.inventory) < 1:

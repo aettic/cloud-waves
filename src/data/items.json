@@ -42,12 +42,13 @@
   },
   {
     "id": 4,
-    "name": "Key",
+    "name": "Library Key",
     "description": "A small brass key",
     "value": 1,
-    "long_description": "A small brass key. It's old and tarnished, but still looks sturdy.",
+    "long_description": "A small brass key. It's old and tarnished, but still looks sturdy. There is a tag on the bow that says 'Library'",
     "use": ["unlock"],
     "unlock": "You insert the key into the lock and turn it. With a satisfying click, the door swings open.",
+    "unlocks_room": 8,
     "quantity": 1,
     "is_expendable": true,
     "can_take": true,
@@ -80,16 +81,15 @@
     "type": "weapon"
   },
   {
-    "id": 7,
-    "name": "Chest",
-    "description": "A locked chest",
-    "value": 1,
-    "long_description": "A locked chest. It's made of sturdy wood and has a heavy iron lock.",
-    "use": ["unlock"],
-    "unlock": "You insert the key into the lock and turn it. With a satisfying click, the chest swings open.",
-    "locked": true,
+    "id": 8,
+    "name": "Amulet",
+    "description": "A golden-encrusted ruby amulet",
+    "value": 10,
+    "long_description": "The brilliant red of this amulet's gemstone glows with an inner light, casting a warm glow over the room. The setting and chain are both made of pure gold.",
+    "use": "none",
+    "quantity": 1,
     "is_expendable": false,
-    "can_take": false,
-    "type": "container"
-    }
+    "can_take": true,
+    "type": "artifact"
+  }
 ]
