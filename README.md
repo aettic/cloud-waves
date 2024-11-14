@@ -27,21 +27,20 @@ characters, etc. in a fantasy setting. I'll include information on the setting a
 ### Must Haves
 
 - [x] Write a story of some kind
-- [ ] Add more locations
+- [ ] Add more locations - expand the cabin
 - [ ] Add more items
-- [ ] Add characters
+- [x] Add containers
+- [ ] Add characters - NPCs and monsters
 - [ ] Add puzzles
 - [ ] Add key / lock system
 - [ ] Add combat
-- [ ] Add resting
-- [ ] Add a save system
+- [ ] Add a save / load system
 - [ ] Add an options system
-- [ ] Add a settings system
 - [x] Add an inventory system
-- [ ] Add handling for different kinds of items 
+- [ ] Add handling for different kinds of items
 - [ ] Add environmental systems (described below)
 - [ ] Add a magic system
-- [x] Implement a language parser
+- [x] Implement a simple language parser
 - [x] Implement a print handler (game_utils)
 
 ### Stretch Goals
@@ -57,6 +56,7 @@ characters, etc. in a fantasy setting. I'll include information on the setting a
 - [ ] Add a stats system
 - [ ] Add a journal system
 - [ ] Add a map system
+- [ ] Look into adding a Natural Language Processor (like NLTK) for commands
 
 ## Mechanics
 

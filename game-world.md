@@ -43,6 +43,8 @@ lives in a manor in the village. However, the hero was given compelling informat
 the amulet itself might be in this noble's cabin outside of town. The player must find the amulet and return it to the
 Society.
 
-The cabin is fairly large and ornate, complete will all the accoutrement of a noble's home. It overlooks a beautiful
+The cabin is fairly large and ornate, complete with all the accoutrement of a noble's home. It overlooks a beautiful
 lake on one side and a dense forest on the other. The player will have to explore the cabin and the surrounding area to
-figure out where the amulet may be and secure it.
+figure out where the amulet may be and secure it. Throughout this exploration, the player will encounter various puzzles,
+riddles, and other challenges that they'll have to overcome in order to progress. Overall, it will be a fairly linear
+progression to start with.
